@@ -1,0 +1,22 @@
+{
+  "name": "com.jirath.inventorysystem",
+  "version": "1.0.0",
+  "displayName": "Inventory System",
+  "description": "Inventory system that supports multiple inventories and creating items\nthrough a mix of scriptable objects and prefabs. Supports equipping/unequipping/using items in first person POV.\nIncludes an example inventory system UI",
+  "unity": "2019.3",
+  "unityRelease": "15f1",
+  "dependencies": {
+    "com.jirath.interactsystem": "1.0.0",
+    "com.unity.textmeshpro": "2.0.1"
+  },
+  "keywords": [
+    "inventory",
+    "jirath",
+    "system"
+  ],
+  "author": {
+    "name": "Gareth Aguilar",
+    "email": "garethaguilar@gmail.com",
+    "url": "https://github.com/Ji-Rath"
+  }
+}

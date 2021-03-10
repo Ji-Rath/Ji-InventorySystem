@@ -1,0 +1,15 @@
+{
+    "name": "JiRath.InventorySystem",
+    "references": [
+        "GUID:b21f8326d7d2b61459c41e39972c8f5a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

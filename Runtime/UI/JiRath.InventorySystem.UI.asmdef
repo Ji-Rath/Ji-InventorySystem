@@ -1,0 +1,19 @@
+{
+    "name": "JiRath.InventorySystem.UI",
+    "references": [
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:953e71c4797d82d40819b0a1210264a1",
+        "GUID:b21f8326d7d2b61459c41e39972c8f5a",
+        "GUID:887d2908b32e2264eba29a6a7c48fd09",
+        "GUID:f287f6708b82f1a4d9aebf1f17922e3b"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

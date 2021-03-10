@@ -1,0 +1,16 @@
+{
+    "name": "JiRath.InventorySystem.EquipSystem",
+    "references": [
+        "GUID:887d2908b32e2264eba29a6a7c48fd09",
+        "GUID:b21f8326d7d2b61459c41e39972c8f5a"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
