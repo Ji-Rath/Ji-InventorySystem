@@ -1,7 +1,7 @@
 ﻿using System;
+using UnityEditor;
 using UnityEngine;
 using JiRath.InteractSystem;
-using JiRath.InventorySystem.Usable;
 
 
 namespace JiRath.InventorySystem
@@ -21,7 +21,7 @@ namespace JiRath.InventorySystem
         public AudioClip pickupSound;
         public AudioClip useSound;
 
-        private AudioSource audioSource;
+		private AudioSource audioSource;
         protected InventoryManager playerInventory;
         protected InteractManager playerInteract;
 
@@ -105,6 +105,20 @@ namespace JiRath.InventorySystem
         public override bool CanInteract(GameObject Interactor)
         {
             return true;
+        }
+
+        public override string GetName()
+        {
+            string name = base.GetName();
+            if (item)
+                name = item.name;
+
+            return name;
+        }
+
+        private void Reset()
+        {
+            nameVisible = true;
         }
     }
 }

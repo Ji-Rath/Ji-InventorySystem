@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace JiRath.InventorySystem.Usable
+namespace JiRath.InventorySystem
 {
     ///Interface is used for when a Pickupable item can be used on an Interactable
     public interface IItemUsable
@@ -20,5 +20,11 @@ namespace JiRath.InventorySystem.Usable
         /// </summary>
         /// <returns>Whether this component is 'correct' or solved</returns>
         bool IsCorrect();
+
+        /// <summary>
+        /// Determines whether the object can have an item used on it
+        /// </summary>
+        /// <returns></returns>
+        bool CanUse();
     }
 }

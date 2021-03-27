@@ -540,6 +540,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0248bf88135f5644af3616b334486c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasReference: {fileID: 2098521163765742721}
   enableUIOverlap: 0
   nextButton: {fileID: 2098521163982182574}
   prevButton: {fileID: 2098521164298306398}
@@ -550,7 +551,6 @@ MonoBehaviour:
   itemPrefabPosition: {fileID: 2098521163135883010}
   scalePreview: 2
   loopInventory: 0
-  inventoryReference: {fileID: 1331571699130322101}
 --- !u!95 &3402569205557403631
 Animator:
   serializedVersion: 3

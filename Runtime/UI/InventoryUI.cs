@@ -26,10 +26,8 @@ namespace JiRath.InventorySystem.UI
         [Space]
         public bool loopInventory = false;
 
-        [Tooltip("GameObject to toggle active when using Inventory UI")]
-        public GameObject inventoryReference;
         private int viewedSlot = 0;
-        private bool inventoryVisible;
+        private bool inventoryVisible = false;
 
         public override bool IsEnabled()
         {
@@ -38,7 +36,7 @@ namespace JiRath.InventorySystem.UI
 
         void Start()
         {
-            inventoryReference.SetActive(false);
+            canvasReference.enabled = false;
         }
 
         private void CreateItemPrefab(InventoryItem currentItem)
@@ -91,14 +89,14 @@ namespace JiRath.InventorySystem.UI
         {
             CheckValidSlot();
             inventoryVisible = isVisible;
-            inventoryReference.SetActive(isVisible);
+            canvasReference.enabled = isVisible;
             EmptyInventory();
             UpdateInventoryUI();
         }
 
         public void EquipCurrentItem()
         {
-            if (playerInventory != null && playerInventory.inventory.itemList.Count > 0)
+            if (playerInventory && playerInventory.inventory.itemList.Count > 0)
             {
                 EquipManager equipSystem = owningPlayer.GetComponent<EquipManager>();
                 GameObject itemPrefab = playerInventory.inventory.itemList[viewedSlot].item.itemModel;
@@ -117,11 +115,22 @@ namespace JiRath.InventorySystem.UI
                 Destroy(itemPrefab);
         }
 
-        void OnDestroy()
+        protected override void OnDisable()
         {
-            playerInventory.UpdateInventoryEvent -= UpdateInventoryUI;
-            playerInventory.OnToggleInventory -= SetVisibility;
-            playerInventory.OnToggleInventory += DisablePlayer;
+            base.OnDisable();
+
+            if (playerInventory)
+            {
+                playerInventory.UpdateInventoryEvent -= UpdateInventoryUI;
+                playerInventory.OnToggleInventory -= SetVisibility;
+                playerInventory.OnToggleInventory -= DisablePlayer;
+            }
+        }
+
+        protected override void OnEnable()
+        {
+            base.OnEnable();
+            Bind(owningPlayer);
         }
 
         public void GetNextItem()
@@ -190,11 +199,14 @@ namespace JiRath.InventorySystem.UI
         {
             base.Bind(owner);
 
-            playerInventory = owner.GetComponent<InventoryManager>();
-            playerInventory.UpdateInventoryEvent += UpdateInventoryUI;
-            playerInventory.OnToggleInventory += SetVisibility;
-            playerInventory.OnToggleInventory += DisablePlayer;
-            //MonsterAI.OnMonsterKillPlayer += DisableInventoryUI;
+            if (owner)
+            {
+                playerInventory = owner.GetComponent<InventoryManager>();
+                playerInventory.UpdateInventoryEvent += UpdateInventoryUI;
+                playerInventory.OnToggleInventory += SetVisibility;
+                playerInventory.OnToggleInventory += DisablePlayer;
+                //MonsterAI.OnMonsterKillPlayer += DisableInventoryUI;
+            }
         }
     }
 }

@@ -129,5 +129,10 @@ namespace JiRath.InventorySystem.EquipSystem
                 UnequipItem();
             }
         }
+
+        public Pickupable GetEquippedItem()
+        {
+            return currentEquippedItem;
+        }
     }
 }
